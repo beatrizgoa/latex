@@ -10,8 +10,8 @@
 \history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
 \doi{10.1109/ACCESS.2017.DOI}
 
-\title{Preparation of Papers for IEEE ACCESS}
-\author{\uppercase{First A. Author}\authorrefmark{1}, \IEEEmembership{Fellow, IEEE},
+\title{Multispectral Presentation Attack Detection with Deep Learning}
+\author{\uppercase{Beatriz Gomez Ayllon}\authorrefmark{1}, \IEEEmembership{Fellow, IEEE},
 \uppercase{Second B. Author\authorrefmark{2}, and Third C. Author,
 Jr}.\authorrefmark{3},
 \IEEEmembership{Member, IEEE}}
@@ -33,33 +33,11 @@ Commerce under Grant BS123456.''}
 \corresp{Corresponding author: First A. Author (e-mail: author@ boulder.nist.gov).}
 
 \begin{abstract}
-These instructions give you guidelines for preparing papers for
-IEEE Access. Use this document as a template if you are
-using \LaTeX. Otherwise, use this document as an
-instruction set. The electronic file of your paper will be formatted further
-at IEEE. Paper titles should be written in uppercase and lowercase letters,
-not all uppercase. Avoid writing long formulas with subscripts in the title;
-short formulas that identify the elements are fine (e.g., "Nd--Fe--B"). Do
-not write ``(Invited)'' in the title. Full names of authors are preferred in
-the author field, but are not required. Put a space between authors'
-initials. The abstract must be a concise yet comprehensive reflection of
-what is in your article. In particular, the abstract must be self-contained,
-without abbreviations, footnotes, or references. It should be a microcosm of
-the full article. The abstract must be between 150--250 words. Be sure that
-you adhere to these limits; otherwise, you will need to edit your abstract
-accordingly. The abstract must be written as one paragraph, and should not
-contain displayed mathematical equations or tabular material. The abstract
-should include three or four different keywords or phrases, as this will
-help readers to find it. It is important to avoid over-repetition of such
-phrases as this can result in a page being rejected by search engines.
-Ensure that your abstract reads well and is grammatically correct.
+This paper presents a multispectral detection of spoofing attacks using the learned features of a Convolutional Neural Network. Visible light, near-Infrared and thermal images are used with this purpose. The design of the CNN is the result from a search of the parameters which defines a Neural Network. Different classifiers have been tested to get the one whose performance is the finest.
 \end{abstract}
 
 \begin{keywords}
-Enter key words or phrases in alphabetical
-order, separated by commas. For a list of suggested keywords, send a blank
-e-mail to keywords@ieee.org or visit \underline
-{http://www.ieee.org/organizations/pubs/ani\_prod/keywrd98.txt}
+Anti-spoofing detection, , bio-inspired, Convolutional Neural Network,  face,  multispectral, Near-Infrared, PAD, thermal, visible light.
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -68,21 +46,44 @@ e-mail to keywords@ieee.org or visit \underline
 
 \section{Introduction}
 \label{sec:introduction}
-\PARstart{T}{his} document is a template for \LaTeX. If you are
-reading a paper or PDF version of this document, please download the
-electronic file, trans\_jour.tex, from the IEEE Web site at \underline
-{http://ieeeauthorcenter.ieee.org/create-your-ieee-article/}\break\underline{use-authoring-tools-and-ieee-article-templates/ieee-article-}\break\underline{templates/} so you can use it to prepare your manuscript. If
-you would prefer to use LaTeX, download IEEE's LaTeX style and sample files
-from the same Web page. You can also explore using the Overleaf editor at
-\underline
-{https://www.overleaf.com/blog/278-how-to-use-overleaf-}\break\underline{with-ieee-collabratec-your-quick-guide-to-getting-started}\break\underline{\#.xsVp6tpPkrKM9}
+\PARstart{F}{ace} anti-spoofing is an area whose importance in increasing in the face biometrics area, the quantity of references devoted to presentation attack detection (PAD) or detecting spoofing attacks has grown in the recent years. Indeed, the face anti-spoofing researched work is commonly addressed in visible light images, therefore, the available face anti-spoofing databases are visible light: CASIA \cite{CASIAdatabase},  REPLAY ATTACK  \cite{Replaydatabase} and MFSD-MSU databases \cite{MFSDMSUdatabase.
 
-If your paper is intended for a conference, please contact your conference
-editor concerning acceptable word processor formats for your particular
-conference.
+Face biometrics systems are commonplace by society, such as unlock mobile devices, as a key to enter to private places, to identify criminal people in public places e. g. airports or subways or just to ascertain the identity of an individual \cite{survey2}, \cite{PaperDavid}. In the 16th International Workshop on Digital Forensics and Watermarking, IWDW 2017, held in Magdeburg, \cite{Congress}, one of the latest congress in which anti-spoofing investigations where presented.
 
-IEEE will do the final formatting of your paper. If your paper is intended
-for a conference, please observe the conference page limits.
+People could try to hack the system with the determination of not recognize a user. The attack can be produced at sensor level, feature level or score level, depending on where is produced in the system \cite{Spoofing_survey}.  Attacks to the system, at the sensor level, are commonly labeled “spoofing attacks” and preventing or detecting those attacks is denominated “anti-spoofing” or “Presentation Attack Detection” (PAD) \cite{ISO_PAD}.
+
+Sensor level attacks (in face biometrics) are commonly produced by tools to impersonate people as masks or printed photos positioned in front of the sensor (camera) so that the sensor would capture the photo instead of the correct person face. Could be highlighted that the equipment necessary to spoof systems is low-price or easy to be acquired (camera) \cite{MFSDMSUdatabase} , what is more, facial images are actually easy to obtain through social networks \cite{attacks}.
+
+Our method aims to use different image sensors (visible light camera, thermal and near-infrared sensors) for PAD with the purpose of using them separately or at the same time and compare the results. The attacks which have to be detected are printed photo attack, printed mask, printed mask with the eyes hole cropped or an image displayed on a tablet.
+
+The leading tool which has been utilized to carry out the principal goal (PAD) is a deep neural network, more specifically, Convolutional Neural Networks (CNN)  CNN are trained with the purpose of learning images features that encourage the classification task.
+
+The remainder of the paper is organized as follows: an abstract which summarizes the object of this article in \ref{sec:XX}, an introduction of multispectral face-antispoofing in section \ref{sec:XXX}, an analysis of the researched work in this article field (section \ref{sec:XX}), a description of the used method to develop this project in section \ref{sec:xxx} in which the utilized database is described, as well as the algorithm and experiments description. In section \ref{sec:XXX} the results obtained in each experiment are presented and discussed, in section \ref{sec:XXX} the conclusions and future work is detailed followed of the acknowledgments. The last section \ref{sec:XXX} points out the references.
+
+\section{Prior Work}
+\label{sec:priorwork}
+
+Different techniques have been researched to decide if a user is being impersonated or not, those techniques could be used with image or video sequences. This state of the art is focused on the Deep Learning for face anti-spoofing detection using multispectral images.
+
+Adding different biometrics systems improves the performance of the system because the weakness of each acquisition system are neutralized by the others \cite{multimodal}. Using others acquisition system could be other types of sensors or other biometric systems such as fingerprint or iris.
+
+In \cite{multispectral_handbookbiometrics} authors use visible light (VIS) images and Near-Infrared (NIR) images. The authors present a visible subsystem and a NIR subsystem which attack independently and a multi-spectral system (VIS and NIR).  Authors attack both subsystems with visible and NIR images independently, but they attack de multi-spectral system with pairs of visible and NIR images. The color of the visible images is analyzed to detect if it is an attack while the texture is analyzed in case of NIR images. The multi-spectral system is composed by two-step based on color analysis, NIR photos are rejected because of the color information because NIR photo has no color and VIS photo attack is detected because of the reflectance of the light. Despite obtaining a 100% accuracy, the multi-spectral system is not a unit, attacks are being fallen apart during the process, our system is a whole and it is at the end when the classifier classifies the sample, in addition, they only use photo attacks.
+
+In \cite{multispectral_wavelength} authors present a method for liveness detection (not PAD, nevertheless is related to). The aim of detecting liveness is that attacks are produced with artificial products.  Authors use two different wavelengths to photograph and record reals users and attacks with. The database is not uniform, the genuine cluster is formed by 120 users, the attacks subsets does not have the same number of samples, depends on the attacks which are planar images, and different minds of mask faces. Attacks are not used simultaneously, each attack is compared with genuine users. The reflectance obtained from the two wavelengths are used to train a SVM. Authors obtain a 100% accuracy when planar attacks videos are being used and 92% accuracy on planar attacks photos vs genuine users. If genuine users are compared with mask face attacks, 89% accuracy is obtained. Authors affirm that their method depends on the material which covers the faces. This method does not compare all the attacks with genuine users at the same time, our method does.
+
+In \cite{multispectral_gradient} authors purpose is detecting liveness (not anti-spoofing detection) their paper is based on the gradient of the captured images by a multispectral system with different wavelengths. Four gradient-based vectors, obtained from the reflectance, are used as input to a SVM to classify the samples into genuine or attack. Experiments are not realized with the same database, one is formed by 70 positive and 132 negative samples, the other is formed by 59 subjects (three orientations) for  positive database and the negative database includes 53 photos, 26 PVC mannequins, and 33 silica gel masks. For the classification task, SVM classifier is used to learn the gradient-based features of genuine and fake faces. Best results authors obtain area 98.3 TPR (%) and 98.7 TNR (%).
+
+Our work differs from the described ones in that we use three different sensors (visible, thermal, and infrared) to capture the database and its corresponding attacks (printed photo, printed mask, printed mask with the eyes hole cropped and tablet attacks). We compare the results of using each sensor separately or all together, whereas, in other works, they use as much two different sensors and not using the same method.
+
+Convolutional Neural Networks are, nowadays, widely used in recognition and classification tasks obtaining satisfying results \cite{CNNexample1,CNNexample2,CNNexample3}. Detecting spoofing attacks, with CNN as main tool, is a field that has started to be researched. However, using CNN for multispectral PAD detection is not investigated yet and it is this paper purpose. The latest developed investigations on anti-spoofing with visible light cameras and CNN are the described following ones:
+
+In \cite{LearnCNN}, authors implement a canonical CNN structure for face anti-spoofing. Authors use videos recorded by a visible light camera. The CNN is adopted from the architecture which won ImageNet 2012 called AlexNet \cite{Imagenet]. Authors use CASIA (formed by 55 users) and REPLAY-ATTACK (50 subjects) databases. The face is detected in each sample and cropped with different scale-ratio. Authors use from one to three video frames to augment the data temporally. Authors assert that in spite of not carefully selecting the parameters of the CNN, the obtained results are successful (HTER lower than 5%). The inter-test results do not have good performance.
+
+In \cite{LSTM-CNN}, authors implement a recurrent neural network with Long Short Term Memory units above a CNN architecture (which is based AlexNet). The determination of this paper is detecting face anti-spoofing. CASIA database (50 subjects: 20 for training, and 30 for testing) has been utilized and a 5.9% HTER (EER is 5.17%) is obtained. Authors base its research in learning the temporal features from videos and then, classify them using logistic regression. LSTM units are a very powerful tool but our method uses images, not video.
+
+A new architecture is developed in \cite{TransferLearningCNN} which is denominated FASnet and is based on VGG-16 architecture \cite{VGG-16}. The neural network is pre-trained with ImageNet database. Authors use the transfer learning approach, more specifically, the fine-tuning and use the CNN to address face anti-spoofing methods. Authors obtain 100 % ACC and  0% HTER, when 3DMAD database is used, and  99.04% ACC and  1.20% HTER when REPLAY-ATTACK.
+
+As it is said those methods are with visible light cameras, there are not available anti-spoofing databases whose samples are obtained with more than two sensors. In addition, most of the face anti-spoofing articles described above use video frames, even though in this article only images are used.
 
 \subsection{Abbreviations and Acronyms}
 Define abbreviations and acronyms the first time they are used in the text,
